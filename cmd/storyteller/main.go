@@ -220,6 +220,9 @@ func tellStory(s story) {
 						if !c.allowNegativeObservations && o < 0 {
 							o = 0
 						}
+						if o < 0.02 {
+							continue
+						}
 						his.Observe(o)
 					case <-end:
 						t.Stop()
